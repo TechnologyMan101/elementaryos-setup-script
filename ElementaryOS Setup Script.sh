@@ -49,7 +49,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "======================================="
-	echo " --- ElementaryOS Setup Script 4.4 ---"
+	echo " --- ElementaryOS Setup Script 4.5 ---"
 	echo "======================================="
 	echo "Supported ElementaryOS Versions (x86_64): 6"
 	tput setaf 10
@@ -116,7 +116,7 @@ full () {
 	sleep 3
 	clear
 	common
-	sudo apt install -y ubuntu-restricted-extras synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gparted vlc p7zip-full p7zip-rar lame gpart grub2-common neofetch ffmpeg webhttrack lsp-plugins tree telegram-desktop easytag android-tools-adb android-tools-fastboot gnome-sound-recorder nikwi supertux dconf-editor deja-dup ffmpegthumbs fonts-cantarell gnome-books krita gimp htop transmission curl git handbrake gtk-3-examples menulibre python3-pip firefox file-roller io.elementary.contractor.file-roller gnome-disk-utility
+	sudo apt install -y ubuntu-restricted-extras synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gparted vlc p7zip-full p7zip-rar lame gpart grub2-common neofetch ffmpeg webhttrack lsp-plugins tree telegram-desktop easytag android-tools-adb android-tools-fastboot gnome-sound-recorder nikwi supertux dconf-editor deja-dup ffmpegthumbs fonts-cantarell krita gimp htop transmission curl git handbrake gtk-3-examples menulibre python3-pip firefox file-roller io.elementary.contractor.file-roller gnome-disk-utility
 	sudo dpkg --add-architecture i386
 	sudo apt update -y
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
@@ -132,6 +132,7 @@ full () {
 	sudo apt full-upgrade -y --allow-downgrades
 	sudo apt autoremove -y --purge
 	sudo apt autoclean -y
+	flatpakmenu
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 	flatpak update -y
 	flatpak install -y flathub org.audacityteam.Audacity
@@ -169,6 +170,7 @@ minimal () {
 	sudo apt full-upgrade -y --allow-downgrades
 	sudo apt autoremove -y --purge
 	sudo apt autoclean -y
+	flatpakmenu
 	flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 	flatpak update -y
 	flatpak install -y flathub org.libreoffice.LibreOffice
@@ -191,6 +193,19 @@ common () {
 	sudo apt update -y
 	sudo apt install -y gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good libavcodec-extra gstreamer1.0-libav chromium-codecs-ffmpeg-extra libdvd-pkg
 	sudo dpkg-reconfigure libdvd-pkg
+}
+flatpakmenu () {
+	clear
+ 	tput setaf 3
+	echo "=============================="
+	echo " --- Flatpak Instructions ---"
+	echo "=============================="
+	echo "When you are prompted to choose between 0-2 (Abort, System, or User), please choose 1 or 2 depending on if you want to install the application to the system or specifically to your user account."
+	tput sgr0
+	echo "Press any key to continue"
+	IFS=""
+	read -sN1 answer
+	clear
 }
 # End of Function Cluster
 # Start of Main Script

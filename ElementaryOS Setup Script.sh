@@ -49,7 +49,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "======================================="
-	echo " --- ElementaryOS Setup Script 4.6 ---"
+	echo " --- ElementaryOS Setup Script 4.7 ---"
 	echo "======================================="
 	echo "Supported ElementaryOS Versions (x86_64): 6"
 	tput setaf 10
@@ -116,7 +116,7 @@ full () {
 	sleep 3
 	clear
 	common
-	sudo apt install -y ubuntu-restricted-extras synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gparted vlc p7zip-full p7zip-rar lame gpart grub2-common neofetch ffmpeg webhttrack lsp-plugins tree telegram-desktop easytag android-tools-adb android-tools-fastboot gnome-sound-recorder nikwi supertux dconf-editor deja-dup ffmpegthumbs fonts-cantarell krita gimp htop transmission curl git handbrake gtk-3-examples menulibre python3-pip firefox file-roller io.elementary.contractor.file-roller gnome-disk-utility dkms gcc make linux-headers-$(uname -r)
+	sudo apt install -y ubuntu-restricted-extras synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gparted vlc p7zip-full p7zip-rar lame gpart grub2-common neofetch ffmpeg webhttrack lsp-plugins tree telegram-desktop easytag android-tools-adb android-tools-fastboot gnome-sound-recorder nikwi supertux dconf-editor deja-dup ffmpegthumbs fonts-cantarell krita gimp htop transmission curl git handbrake gtk-3-examples menulibre python3-pip firefox file-roller io.elementary.contractor.file-roller gnome-disk-utility dkms gcc make linux-headers-$(uname -r) gnome-system-monitor
 	sudo dpkg --add-architecture i386
 	sudo apt update -y
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
@@ -162,7 +162,7 @@ minimal () {
 	sleep 3
 	clear
 	common
-	sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gpart ffmpeg dconf-editor deja-dup ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre python3-pip pulseeffects firefox file-roller io.elementary.contractor.file-roller gnome-disk-utility dkms gcc make linux-headers-$(uname -r)
+	sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gpart ffmpeg dconf-editor deja-dup ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre python3-pip pulseeffects firefox file-roller io.elementary.contractor.file-roller gnome-disk-utility dkms gcc make linux-headers-$(uname -r) gnome-system-monitor
 	sudo dpkg --add-architecture i386
 	sudo apt update -y
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
@@ -201,6 +201,7 @@ flatpakmenu () {
 	echo " --- Flatpak Instructions ---"
 	echo "=============================="
 	echo "When you are prompted to choose between 0-2 (Abort, System, or User), please choose 1 or 2 depending on if you want to install the application to the system or specifically to your user account."
+	echo "When you are prompted to choose a branch (master, stable), please choose stable."
 	tput sgr0
 	echo "Press any key to continue"
 	IFS=""

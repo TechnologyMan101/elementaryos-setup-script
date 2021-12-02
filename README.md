@@ -4,7 +4,7 @@ Bash script to set up a fresh install of ElementaryOS.
 
 # Documentation
 
-Version 4.7
+Version 4.8
 
 Supported ElementaryOS Versions: 6.x
 

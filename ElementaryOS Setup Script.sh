@@ -49,7 +49,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "========================================"
-	echo " --- ElementaryOS Setup Script 4.10 ---"
+	echo " --- ElementaryOS Setup Script 4.11 ---"
 	echo "========================================"
 	echo "Supported ElementaryOS Versions (x86_64): 6"
 	tput setaf 10
@@ -141,7 +141,6 @@ full () {
 	flatpak install -y flathub org.libreoffice.LibreOffice
 	flatpak install -y appcenter com.github.donadigo.eddy
 	flatpak install -y appcenter com.github.sgpthomas.hourglass
-	flatpak install -y appcenter org.gnome.Evince
 	flatpak install -y flathub org.inkscape.Inkscape
 	flatpak update -y
 	flatpak uninstall -y --unused --delete-data
@@ -177,7 +176,6 @@ minimal () {
 	flatpak install -y flathub org.libreoffice.LibreOffice
 	flatpak install -y appcenter com.github.donadigo.eddy
 	flatpak install -y appcenter com.github.sgpthomas.hourglass
-	flatpak install -y appcenter org.gnome.Evince
 	flatpak update -y
 	flatpak uninstall -y --unused --delete-data
 	pip3 install pip speedtest-cli -U

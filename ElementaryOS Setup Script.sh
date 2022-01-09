@@ -49,7 +49,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "========================================"
-	echo " --- ElementaryOS Setup Script 4.11 ---"
+	echo " --- ElementaryOS Setup Script 4.12 ---"
 	echo "========================================"
 	echo "Supported ElementaryOS Versions (x86_64): 6"
 	tput setaf 10
@@ -59,16 +59,20 @@ mainmenu () {
 	tput setaf 3
 	echo "Script may prompt you or ask you for your password once in a while. Please monitor your computer until the script is done."
 	echo "This script will show terminal output. This is normal."
-	echo "You can open this script in a text editor to see packages to be installed in detail."
+	echo "You can open this script in a text editor to view all functions."
 	tput setaf 10
 	echo "You are encouraged to modify this script for your own needs."
 	tput setaf 9
 	echo "System will automatically reboot after the script is run!!!"
 	echo "It is not recommended to run this script more than once!!!"
+	tput setaf 10
+	echo "You may run this script again after an upgrade or to get your system up-to-date with the latest version of my script."
+	tput setaf 9
 	echo "Make sure you have a stable and fast Internet connection before proceeding!!!"
 	tput setaf 3
 	echo "Press 1 to perform a Full Install (All User Packages)"
 	echo "Press 2 to perform a Minimal Install (Essentials)"
+	echo "Press 3 to view instructions for setting up a multi-user system"
 	tput setaf 9
 	echo "Press Q to quit"
 	tput sgr0
@@ -78,9 +82,24 @@ mainmenu () {
 	case $(echo "$answer" | tr A-Z a-z) in
 		1)	full;;
 		2)	minimal;;
+		3)	multiusermenu;;
 		q)	quitscript;;
 		*)	badoption;;
 	esac
+}
+multiusermenu () {
+	clear
+ 	tput setaf 3
+	echo "==========================================="
+	echo " --- Instructions for Multi-User Setup ---"
+	echo "==========================================="
+	tput setaf 9
+	echo "If you want to set up multiple user accounts on your computer, please run the script again on each new user account. Make sure that additional user accounts are set to Administrator. You can set accounts back to Standard after completing setup."
+	tput sgr0
+	echo "Hit any key to return to the main menu:"
+	IFS=""
+	read -sN1 answer
+	mainmenu
 }
 quitscript () {
 	tput sgr0
@@ -116,7 +135,7 @@ full () {
 	sleep 3
 	clear
 	common
-	sudo apt install -y ubuntu-restricted-extras synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gparted vlc p7zip-full p7zip-rar lame gpart grub2-common neofetch ffmpeg webhttrack lsp-plugins tree telegram-desktop easytag android-tools-adb android-tools-fastboot gnome-sound-recorder nikwi supertux dconf-editor deja-dup ffmpegthumbs fonts-cantarell krita gimp htop transmission curl git handbrake gtk-3-examples menulibre python3-pip firefox gnome-disk-utility dkms gcc make linux-headers-$(uname -r) gnome-system-monitor cpu-x hardinfo gucharmap baobab
+	sudo apt install -y ubuntu-restricted-extras synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gparted vlc p7zip-full p7zip-rar lame gpart grub2-common neofetch ffmpeg webhttrack lsp-plugins tree telegram-desktop easytag android-tools-adb android-tools-fastboot gnome-sound-recorder nikwi supertux dconf-editor deja-dup ffmpegthumbs fonts-cantarell krita gimp htop transmission curl git handbrake gtk-3-examples menulibre python3-pip firefox gnome-disk-utility dkms gcc make linux-headers-$(uname -r) gnome-system-monitor cpu-x hardinfo gucharmap baobab bijiben
 	sudo dpkg --add-architecture i386
 	sudo apt update -y
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
@@ -142,6 +161,10 @@ full () {
 	flatpak install -y appcenter com.github.donadigo.eddy
 	flatpak install -y appcenter com.github.sgpthomas.hourglass
 	flatpak install -y flathub org.inkscape.Inkscape
+	flatpak install -y flathub ar.xjuan.Cambalache
+	flatpak install -y flathub com.github.jeromerobert.pdfarranger
+	flatpak install -y flathub com.github.muriloventuroso.pdftricks
+	flatpak install -y flathub org.kde.okular
 	flatpak update -y
 	flatpak uninstall -y --unused --delete-data
 	pip3 install pip youtube-dl yt-dlp speedtest-cli -U
@@ -162,7 +185,7 @@ minimal () {
 	sleep 3
 	clear
 	common
-	sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gpart ffmpeg dconf-editor deja-dup ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre python3-pip pulseeffects firefox gnome-disk-utility dkms gcc make linux-headers-$(uname -r) gnome-system-monitor cpu-x hardinfo gucharmap baobab
+	sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gpart ffmpeg dconf-editor deja-dup ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre python3-pip pulseeffects firefox gnome-disk-utility dkms gcc make linux-headers-$(uname -r) gnome-system-monitor cpu-x hardinfo gucharmap baobab bijiben
 	sudo dpkg --add-architecture i386
 	sudo apt update -y
 	sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
@@ -176,6 +199,9 @@ minimal () {
 	flatpak install -y flathub org.libreoffice.LibreOffice
 	flatpak install -y appcenter com.github.donadigo.eddy
 	flatpak install -y appcenter com.github.sgpthomas.hourglass
+	flatpak install -y flathub com.github.jeromerobert.pdfarranger
+	flatpak install -y flathub com.github.muriloventuroso.pdftricks
+	flatpak install -y flathub org.kde.okular
 	flatpak update -y
 	flatpak uninstall -y --unused --delete-data
 	pip3 install pip speedtest-cli -U

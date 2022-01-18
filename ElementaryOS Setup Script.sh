@@ -49,7 +49,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "========================================"
-	echo " --- ElementaryOS Setup Script 4.12 ---"
+	echo " --- ElementaryOS Setup Script 4.13 ---"
 	echo "========================================"
 	echo "Supported ElementaryOS Versions (x86_64): 6"
 	tput setaf 10
@@ -165,6 +165,7 @@ full () {
 	flatpak install -y flathub com.github.jeromerobert.pdfarranger
 	flatpak install -y flathub com.github.muriloventuroso.pdftricks
 	flatpak install -y flathub org.kde.okular
+	flatpak install -y flathub com.github.flxzt.rnote
 	flatpak update -y
 	flatpak uninstall -y --unused --delete-data
 	pip3 install pip youtube-dl yt-dlp speedtest-cli -U

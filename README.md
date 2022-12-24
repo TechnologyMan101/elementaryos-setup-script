@@ -1,23 +1,22 @@
 # ElementaryOS Setup Script
 Bash script to set up a fresh install of ElementaryOS.
 
-# This script is now being retired due to lack of use and testing. This script will no longer be maintained, although this script should still continue to function normally until at least ElementaryOS 7.x. New features and fixes will no longer be made to this script. 
 
 # Documentation
 
-Version 4.13
+Version 5.0
 
 Supported ElementaryOS Versions: 6.x
 
 **Please Run Script After Following Instructions Here**
 
-**The Extras folder also contains other tools you may want including font packs.**
+<ins>_**Make sure to update your system using the system’s software center and reboot before performing any tasks here and running the script. Failing to do so may result in severe breakage!!!**_</ins>
+
+**The Extras folder also contains other tools you may want.**
 
 Please install .deb files and files using other types of installation formats using files manually (if you have them). Please use `sudo apt install /path/to/file` to install .deb packages.
 
-Please copy the Essential Font Pack from Extras at https://mega.nz/folder/sBwwxBTR#zf6d3UaJYnNGl5tXaN63ag into `/usr/share/fonts/` Open the file manager as an administrator. This is required to perform these actions as this is modifying files on the system level. Before copying the font pack to the fonts folder, check that the folder permissions are all on “Read, Write, Execute” for all users.
-
-Please add yourself to `vboxusers` using `sudo usermod -aG vboxusers $USER` and then reboot. Only do this if you have VirtualBox installed.
+Please add yourself to `vboxusers` using `sudo usermod -aG vboxusers $USER` and then reboot. Only do this if you have VirtualBox installed. Since VirtualBox is installed as a DEB package on this distro, make sure to run it before the script and after installing VirtualBox if you choose to install VirtualBox. 
 
 
 # Keyboard Shortcuts:

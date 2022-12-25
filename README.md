@@ -4,9 +4,11 @@ Bash script to set up a fresh install of ElementaryOS.
 
 # Documentation
 
-Version 5.0
+Version 5.1
 
 Supported ElementaryOS Versions: 6.x
+
+Recommended Free Space: 40 GB
 
 **Please Run Script After Following Instructions Here**
 

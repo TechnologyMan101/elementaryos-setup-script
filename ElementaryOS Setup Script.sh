@@ -85,7 +85,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "======================================="
-	echo " --- ElementaryOS Setup Script 5.2 ---"
+	echo " --- ElementaryOS Setup Script 5.3 ---"
 	echo "======================================="
 	echo "Supported ElementaryOS Versions (x86_64): 6"
 	echo "Recommended Free Space: 40 GB"
@@ -177,7 +177,7 @@ full () {
 	sleep 3
 	clear
 	common
-	runcheck sudo apt install -y ubuntu-restricted-extras synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gparted vlc p7zip-full p7zip-rar lame gpart grub2-common neofetch ffmpeg webhttrack lsp-plugins tree telegram-desktop easytag android-tools-adb android-tools-fastboot gnome-sound-recorder nikwi supertux dconf-editor deja-dup ffmpegthumbs fonts-cantarell krita gimp htop curl git handbrake gtk-3-examples menulibre python3-pip firefox gnome-disk-utility dkms gcc make linux-headers-$(uname -r) gnome-system-monitor cpu-x hardinfo gucharmap baobab bijiben supertuxkart unzip mcomix gscan2pdf
+	runcheck sudo apt install -y ubuntu-restricted-extras synaptic remmina bleachbit frozen-bubble musescore3 asunder brasero k3b pavucontrol pulseeffects rhythmbox shotwell solaar gparted vlc p7zip-full p7zip-rar lame gpart grub2-common neofetch ffmpeg webhttrack lsp-plugins tree telegram-desktop easytag android-tools-adb android-tools-fastboot gnome-sound-recorder nikwi supertux dconf-editor deja-dup ffmpegthumbs fonts-cantarell krita gimp htop curl git handbrake gtk-3-examples menulibre python3-pip firefox gnome-disk-utility dkms gcc make linux-headers-$(uname -r) gnome-system-monitor cpu-x hardinfo gucharmap baobab bijiben supertuxkart unzip mcomix gscan2pdf gsmartcontrol
 	runcheck sudo dpkg --add-architecture i386
 	runcheck sudo apt update -y
 	runcheck sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
@@ -212,6 +212,7 @@ full () {
 	runcheck flatpak install -y flathub app.drey.EarTag
 	runcheck flatpak install -y flathub de.haeckerfelix.Fragments
 	runcheck flatpak install -y flathub com.calibre_ebook.calibre
+	runcheck flatpak install -y flathub org.kde.kid3
 	runcheck flatpak update -y
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck python3 -m pip install pip wheel youtube-dl yt-dlp speedtest-cli mangadex-downloader[optional] animdl -U
@@ -237,7 +238,7 @@ minimal () {
 	sleep 3
 	clear
 	common
-	runcheck sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gpart ffmpeg dconf-editor deja-dup ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre python3-pip pulseeffects firefox gnome-disk-utility dkms gcc make linux-headers-$(uname -r) gnome-system-monitor cpu-x hardinfo gucharmap baobab bijiben gscan2pdf unzip
+	runcheck sudo apt install -y ubuntu-restricted-extras synaptic pavucontrol rhythmbox gparted p7zip-full p7zip-rar gpart ffmpeg dconf-editor deja-dup ffmpegthumbs fonts-cantarell htop curl git gtk-3-examples menulibre python3-pip pulseeffects firefox gnome-disk-utility dkms gcc make linux-headers-$(uname -r) gnome-system-monitor cpu-x hardinfo gucharmap baobab bijiben gscan2pdf unzip gsmartcontrol
 	runcheck sudo dpkg --add-architecture i386
 	runcheck sudo apt update -y
 	runcheck sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386

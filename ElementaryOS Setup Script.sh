@@ -85,7 +85,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "======================================="
-	echo " --- ElementaryOS Setup Script 5.5 ---"
+	echo " --- ElementaryOS Setup Script 5.6 ---"
 	echo "======================================="
 	echo "Supported ElementaryOS Versions (x86_64): 6"
 	echo "Recommended Free Space: 40 GB"
@@ -213,6 +213,7 @@ full () {
 	runcheck flatpak install -y flathub de.haeckerfelix.Fragments
 	runcheck flatpak install -y flathub com.calibre_ebook.calibre
 	runcheck flatpak install -y flathub org.kde.kid3
+	runcheck flatpak install flathub -y org.kde.subtitlecomposer
 	runcheck flatpak update -y
 	runcheck flatpak uninstall -y --unused --delete-data
 	runcheck python3 -m pip install pip wheel youtube-dl yt-dlp speedtest-cli mangadex-downloader[optional] animdl -U

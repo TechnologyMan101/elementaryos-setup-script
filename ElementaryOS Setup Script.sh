@@ -85,7 +85,7 @@ mainmenu () {
 	clear
  	tput setaf 3
 	echo "======================================="
-	echo " --- ElementaryOS Setup Script 5.3 ---"
+	echo " --- ElementaryOS Setup Script 5.4 ---"
 	echo "======================================="
 	echo "Supported ElementaryOS Versions (x86_64): 6"
 	echo "Recommended Free Space: 40 GB"
@@ -276,7 +276,7 @@ common () {
 	runcheck sudo apt update -y
 	runcheck sudo apt install -y software-properties-common
 	runcheck sudo apt update -y
-	runcheck sudo apt install -y gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good libavcodec-extra gstreamer1.0-libav chromium-codecs-ffmpeg-extra libdvd-pkg libheif1 libquicktime2 heif-gdk-pixbuf
+	runcheck sudo apt install -y gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-plugins-good libavcodec-extra gstreamer1.0-libav chromium-codecs-ffmpeg-extra libdvd-pkg libheif1 libquicktime2 heif-gdk-pixbuf heif-thumbnailer
 	runcheck sudo dpkg-reconfigure libdvd-pkg
 }
 echo "Loaded common."

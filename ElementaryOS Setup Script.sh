@@ -181,7 +181,7 @@ full () {
 	runcheck sudo dpkg --add-architecture i386
 	runcheck sudo apt update -y
 	runcheck sudo apt install -y libc6-i386 libx11-6:i386 libegl1-mesa:i386 zlib1g:i386 libstdc++6:i386 libgl1-mesa-dri:i386 libasound2:i386 libpulse0:i386
-	runcheck sudo apt install -y default-jdk
+	runcheck sudo apt install -y openjdk-17-jdk
 	java -version
 	sleep 3
 	runcheck sudo add-apt-repository -y ppa:mkusb/ppa

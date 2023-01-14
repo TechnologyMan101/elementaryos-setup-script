@@ -1,6 +1,7 @@
 # ElementaryOS Setup Script
 Bash script to set up a fresh install of ElementaryOS.
 
+# This script is no longer maintained. 
 
 # Documentation
 
